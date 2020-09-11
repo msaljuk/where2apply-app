@@ -1,0 +1,29 @@
+@import "../../../baseStyles";
+
+.formFields {
+  color: $matte-black;
+}
+
+.fieldHeader {
+  font-family: "Avenir-Heavy";
+  font-size: 24px;
+}
+
+.questionSection {
+  padding: 3% 0;
+}
+
+.sliderContainer {
+  margin: 0 10%;
+  margin-top: 7%;
+}
+
+.areaTypeContainer {
+  margin-top: 4%;
+}
+
+.locationContainer {
+  margin-left: 3%;
+  margin-top: 8%;
+  overflow: scroll;
+}
