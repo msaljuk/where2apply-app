@@ -1,0 +1,37 @@
+@import "../../baseStyles.scss";
+
+.container {
+  width: 100%;
+  text-align: center;
+}
+
+.headerBlack {
+  font-family: "Avenir-Black";
+  font-size: 48px;
+  margin-left: -2%;
+}
+
+.subtitleBlack {
+  margin-top: 1%;
+  font-family: "Avenir-Light";
+  font-size: 24px;
+}
+
+.headerWhite {
+  @extend .headerBlack;
+  color: $white;
+}
+
+.subtitleWhite {
+  @extend .subtitleBlack;
+  color: $white;
+}
+
+.grid {
+  margin-top: 15%;
+  min-height: 200px;
+
+  @media all and (min-width: $breakpoint-desktop) {
+    margin-top: 5%;
+  }
+}

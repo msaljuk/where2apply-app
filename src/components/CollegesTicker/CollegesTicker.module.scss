@@ -1,0 +1,34 @@
+@import "../../baseStyles.scss";
+
+.container {
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.collegeNameHuge {
+  font-family: "Avenir-Black";
+  font-size: 140px;
+  margin: 10px 0;
+  opacity: 0.05;
+}
+
+.collegeNameBig {
+  font-family: "Avenir-Black";
+  font-size: 72px;
+  margin: 5px 0;
+  opacity: 0.075;
+}
+
+.collegeNameMedium {
+  font-family: "Avenir-Black";
+  font-size: 48px;
+  opacity: 0.1;
+}
+
+.collegeNameSmall {
+  font-family: "Avenir-Black";
+  font-size: 24px;
+  opacity: 0.125;
+  padding: 0;
+  margin: 0;
+}

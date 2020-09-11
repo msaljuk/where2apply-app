@@ -1,0 +1,83 @@
+@import "../../baseStyles";
+
+.container {
+  background-color: $matte-black;
+  color: $white;
+  font-size: 18px;
+  padding: 0.5%;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    font-size: 24px;
+  }
+}
+
+.navbarMenu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". . .";
+  list-style-type: none;
+  padding: 0;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    padding: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.navbarLink {
+  color: $white;
+  text-decoration: none;
+  display: block;
+  padding: 15px 5px;
+}
+
+.navbarLink:visited {
+  color: $white;
+}
+
+.logo {
+  font-family: "Avenir-Heavy";
+}
+
+.linkElement {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: auto;
+  padding: 0 2%;
+}
+
+.processElement {
+  padding-left: 0;
+}
+
+.middleLinks {
+  display: none;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.process,
+.data,
+.about {
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+  &:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}

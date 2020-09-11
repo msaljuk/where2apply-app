@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Avenir-Light";
+  src: local("Avenir-Light"), url(./fonts/Avenir-Light.ttf);
+}
+@font-face {
+  font-family: "Avenir-Book";
+  src: local("Avenir-Book"), url(./fonts/Avenir-Book.ttf);
+}
+@font-face {
+  font-family: "Avenir-Roman";
+  src: local("Avenir-Roman"), url(./fonts/Avenir-Roman.ttf);
+}
+@font-face {
+  font-family: "Avenir-Medium";
+  src: local("Avenir-Medium"), url(./fonts/Avenir-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Heavy";
+  src: local("Avenir-Heavy"), url(./fonts/Avenir-Heavy.ttf);
+}
+
+@font-face {
+  font-family: "Avenir-Black";
+  src: local("Avenir-Black"), url(./fonts/Avenir-Black.ttf);
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir-Light", "Avenir-Book", "Avenir-Roman", "Avenir-Medium",
+    "Avenir-Heavy", "Avenir-Black";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.ticker {
+  background-color: #333333;
+  color: white;
+}

@@ -1,0 +1,28 @@
+@import "../../../baseStyles.scss";
+
+.container {
+  margin: auto;
+  max-width: 350px;
+}
+
+.imageContainer {
+  background-color: $eggshell;
+  min-height: 400px;
+  margin-bottom: 7%;
+}
+
+.header {
+  font-family: "Avenir-Heavy";
+  font-size: 24px;
+}
+
+.subtitle {
+  font-family: "Avenir-Light";
+  font-size: 22px;
+}
+
+.role {
+  font-family: "Avenir-Light";
+  font-size: 18px;
+  margin-top: 3%;
+}

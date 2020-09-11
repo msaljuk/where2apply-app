@@ -1,0 +1,15 @@
+@import "../../baseStyles.scss";
+
+.button {
+  background-color: $jade-blue;
+  color: $white;
+  font-family: "Avenir-Black";
+  font-size: 24px;
+  padding: 7px 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: $code-green;
+}

@@ -1,0 +1,43 @@
+@import "../../../baseStyles.scss";
+
+.stepContainer {
+  font-family: "Avenir-Black";
+  font-size: 144px;
+  color: $jade-blue;
+  text-align: left;
+}
+
+.puddleContainer {
+  position: absolute;
+  margin-top: 5%;
+  z-index: -1;
+}
+
+.stepImageContainer {
+  margin-top: -30px;
+}
+
+.stepImage {
+  width: 150px;
+}
+
+.stepTitle {
+  margin-top: auto;
+  font-family: "Avenir-Heavy";
+  margin-top: 5%;
+  font-size: 24px;
+}
+
+.stepDescription {
+  font-family: "Avenir-Light";
+  margin-top: 4%;
+  font-size: 24px;
+}
+
+.blackText {
+  color: $matte-black;
+}
+
+.whiteText {
+  color: $white;
+}

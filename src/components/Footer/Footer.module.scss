@@ -1,0 +1,59 @@
+@import "../../baseStyles";
+
+.container {
+  background-color: $matte-black;
+  color: white;
+  padding: 10% 10%;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    padding: 5% 10%;
+  }
+}
+
+.logo {
+  font-family: "Avenir-Heavy";
+  font-size: 18px;
+}
+
+.version {
+  font-family: "Avenir-Light";
+  font-size: 16px;
+}
+
+.disclaimer {
+  font-family: "Avenir-Heavy";
+  font-size: 14px;
+  text-align: left;
+  margin-top: 2%;
+  margin-bottom: 0.5%;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    margin-top: 0%;
+    text-align: right;
+  }
+}
+
+.suggestion {
+  font-family: "Avenir-Light";
+  font-size: 14px;
+  text-align: left;
+  margin-top: 7%;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    margin-top: 0%;
+    text-align: right;
+  }
+}
+
+.emailLink {
+  text-decoration: none;
+  color: $jade-blue;
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: $code-green;
+  }
+}
