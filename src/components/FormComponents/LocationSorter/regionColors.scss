@@ -1,0 +1,23 @@
+@import "../../../baseStyles";
+
+$newEngland: #48b5d7;
+$midEast: #203db0;
+$greatLakes: #430d8f;
+$plains: #76065a;
+$southEast: #920f30;
+$southWest: #b6330c;
+$rockyMountains: #f09449;
+$farWest: #dcca2b;
+$outlyingAreas: $code-green;
+
+:export {
+  newEngland: $newEngland;
+  midEast: $midEast;
+  greatLakes: $greatLakes;
+  plains: $plains;
+  southEast: $southEast;
+  southWest: $southWest;
+  rockyMountains: $rockyMountains;
+  farWest: $farWest;
+  outlyingAreas: $outlyingAreas;
+}

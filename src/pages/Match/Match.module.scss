@@ -10,9 +10,13 @@
 }
 
 .progressContainer {
-  width: 350px;
+  width: 200px;
   margin: auto;
   padding: 5% 10%;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    width: 350px;
+  }
 }
 
 .formContainer {
@@ -23,4 +27,17 @@
     margin: 1% 15%;
     margin-bottom: 0;
   }
+}
+
+.buttonListContainer {
+  margin: 20% 0%;
+  text-align: center;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    margin: 5% 0%;
+  }
+}
+
+.buttonContainer {
+  margin-left: 2%;
 }

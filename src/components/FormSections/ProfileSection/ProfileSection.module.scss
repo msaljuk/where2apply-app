@@ -1,0 +1,41 @@
+@import "../../../baseStyles";
+
+.fieldHeader {
+  font-family: "Avenir-Heavy";
+  font-size: 24px;
+}
+
+.fieldDescription {
+  font-family: "Avenir-Roman";
+  margin-top: 1%;
+  margin-bottom: 5%;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    margin: 1% 0;
+  }
+}
+
+.fieldsContainer {
+  margin: 10% 0;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    margin: 3% 0;
+  }
+}
+
+.fieldContainer {
+  margin-top: 3%;
+}
+
+.inputFieldDescription {
+  padding-right: 50px;
+  line-height: 60px;
+}
+
+.profileInnerContainer {
+  @media all and (max-width: $breakpoint-desktop) {
+    margin-top: 15%;
+  }
+
+  margin-top: 5%;
+}

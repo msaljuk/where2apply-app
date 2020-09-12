@@ -1,3 +1,6 @@
+import styles from "./LocationSorter.module.scss";
+import colors from "./regionColors.scss";
+
 const FarWest = "FarWest";
 const GreatLakes = "GreatLakes";
 const MidEast = "MidEast";
@@ -34,7 +37,7 @@ const statesToRegions = [
   { MI: GreatLakes },
   { MN: Plains },
   { MS: Southeast },
-  { MO: RockyMountains },
+  { MO: Plains },
   { MT: RockyMountains },
   { NE: Plains },
   { NV: FarWest },
@@ -63,21 +66,22 @@ const statesToRegions = [
 ];
 
 const regionFills = {
-  NewEngland: "red",
-  MidEast: "green",
-  GreatLakes: "yellow",
-  Plains: "orange",
-  Southeast: "purple",
-  Southwest: "black",
-  RockyMountains: "brown",
-  FarWest: "teal",
-  OutlyingAreas: "white",
+  NewEngland: colors.newEngland,
+  MidEast: colors.midEast,
+  GreatLakes: colors.greatLakes,
+  Plains: colors.plains,
+  Southeast: colors.southEast,
+  Southwest: colors.southWest,
+  RockyMountains: colors.rockyMountains,
+  FarWest: colors.farWest,
+  OutlyingAreas: colors.outlyingAreas,
 };
 
 export const statesCustomConfig = () => {
   return (() => {
     const finalConfig = {};
 
+    // eslint-disable-next-line
     statesToRegions.map((item) => {
       const state = Object.keys(item)[0];
 
@@ -86,4 +90,30 @@ export const statesCustomConfig = () => {
 
     return finalConfig;
   })();
+};
+
+export const getRegionStyle = (regionName) => {
+  switch (regionName) {
+    case "New England":
+      console.log("hit");
+      return styles.newEngland;
+    case "Mid East":
+      return styles.midEast;
+    case "Great Lakes":
+      return styles.greatLakes;
+    case "Plains":
+      return styles.plains;
+    case "Southeast":
+      return styles.southEast;
+    case "Southwest":
+      return styles.southWest;
+    case "Rocky Mountains":
+      return styles.rockyMountains;
+    case "Far West":
+      return styles.farWest;
+    case "Outlying Areas":
+      return styles.outlyingAreas;
+    default:
+      return;
+  }
 };

@@ -1,0 +1,111 @@
+@import "../../../baseStyles";
+@import "./regionColors.scss";
+
+.sortable {
+  border: 1px solid;
+  min-height: 300px;
+  cursor: pointer;
+
+  @media all and (min-width: $breakpoint-desktop) {
+    min-height: 400px;
+  }
+}
+
+.generalRegionStyle {
+  font-family: "Avenir-Black";
+  font-size: 14px;
+  text-align: center;
+  padding: 5% 5%;
+  color: $white;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
+
+  @media all and (min-width: $breakpoint-desktop) {
+    font-size: 16px;
+  }
+}
+
+.newEngland {
+  @extend .generalRegionStyle;
+  background-color: $newEngland;
+}
+
+.midEast {
+  @extend .generalRegionStyle;
+  background-color: $midEast;
+}
+
+.greatLakes {
+  @extend .generalRegionStyle;
+  background-color: $greatLakes;
+}
+
+.plains {
+  @extend .generalRegionStyle;
+  background-color: $plains;
+}
+
+.southEast {
+  @extend .generalRegionStyle;
+  background-color: $southEast;
+}
+
+.southWest {
+  @extend .generalRegionStyle;
+  background-color: $southWest;
+}
+
+.rockyMountains {
+  @extend .generalRegionStyle;
+  background-color: $rockyMountains;
+}
+
+.farWest {
+  @extend .generalRegionStyle;
+  background-color: $farWest;
+}
+
+.outlyingAreas {
+  @extend .generalRegionStyle;
+  background-color: $outlyingAreas;
+}
+
+.tableHeader {
+  font-family: "Avenir-Black";
+  font-size: 16px;
+  text-align: center;
+  height: 60px;
+
+  @media all and (min-width: $breakpoint-small-tablet) {
+    height: 40px;
+  }
+}
+
+.locationSorterContainer {
+  margin: 2% 0;
+}
+
+.sortTablesContainer {
+  margin-top: 5%;
+}
+
+.mapKeyContainer {
+  overflow: scroll;
+}
+
+.sortGuideText {
+  text-align: center;
+  padding: 0% 15%;
+  font-size: 18px;
+  margin-bottom: 10%;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    margin-bottom: 3%;
+  }
+}

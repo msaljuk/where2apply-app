@@ -25,5 +25,14 @@
 .locationContainer {
   margin-left: 3%;
   margin-top: 8%;
-  overflow: scroll;
+}
+
+.fieldDescription {
+  font-family: "Avenir-Roman";
+  margin-top: 1%;
+  margin-bottom: 5%;
+
+  @media all and (min-width: $breakpoint-large-tablet) {
+    margin: 1% 0;
+  }
 }

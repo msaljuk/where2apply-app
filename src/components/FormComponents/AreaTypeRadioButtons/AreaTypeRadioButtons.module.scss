@@ -8,3 +8,23 @@
 .radioButton {
   color: $jade-blue !important;
 }
+
+.radioContainer {
+  margin: 10%;
+}
+
+.fullGrid {
+  padding: 0 !important;
+  padding-left: 10% !important;
+
+  @media all and (min-width: $breakpoint-desktop) {
+    width: 500px !important;
+    padding-left: 5% !important;
+  }
+}
+
+.areaTypeInnerContainer {
+  @media all and (max-width: $breakpoint-desktop) {
+    padding: 10% 0;
+  }
+}

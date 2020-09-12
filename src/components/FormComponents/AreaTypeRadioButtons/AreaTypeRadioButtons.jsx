@@ -1,12 +1,15 @@
-import React, { useState } from "react";
 import {
+  Grid,
   FormControl,
   FormControlLabel,
   Radio,
   RadioGroup,
 } from "@material-ui/core";
+import React, { useState } from "react";
 
 import styles from "./AreaTypeRadioButtons.module.scss";
+
+const NUM_ITEMS_PER_GRID = 6;
 
 const areaTypes = [
   "City: Large",
@@ -23,20 +26,20 @@ const areaTypes = [
   "Town: Remote",
 ];
 
-const areaTypesToBackendNumber = {
-  "City: Large": 11,
-  "City: Midsize": 10,
-  "City: Small": 9,
-  "Rural: Distant": 1,
-  "Rural: Fringe": 2,
-  "Rural: Remote": 0,
-  "Suburb: Large": 8,
-  "Suburb: Midsize": 7,
-  "Suburb: Small": 6,
-  "Town: Distant": 4,
-  "Town: Fringe": 5,
-  "Town: Remote": 3,
-};
+// const areaTypesToBackendNumber = {
+//   "City: Large": 11,
+//   "City: Midsize": 10,
+//   "City: Small": 9,
+//   "Rural: Distant": 1,
+//   "Rural: Fringe": 2,
+//   "Rural: Remote": 0,
+//   "Suburb: Large": 8,
+//   "Suburb: Midsize": 7,
+//   "Suburb: Small": 6,
+//   "Town: Distant": 4,
+//   "Town: Fringe": 5,
+//   "Town: Remote": 3,
+// };
 
 const AreaTypeRadioButtons = () => {
   const [value, setValue] = useState("City: Large");
@@ -46,31 +49,61 @@ const AreaTypeRadioButtons = () => {
   };
 
   return (
-    <FormControl component="fieldset">
-      <RadioGroup
-        aria-label="area-type"
-        name="ur_pref"
-        value={value}
-        onChange={handleChange}
-      >
-        {areaTypes.map((areaType) => {
-          return (
-            <FormControlLabel
-              classes={{ label: styles.label }}
-              value={areaType}
-              control={
-                <Radio
-                  classes={{
-                    root: styles.radioButton,
-                  }}
-                />
-              }
-              label={areaType}
-            />
-          );
-        })}
-      </RadioGroup>
-    </FormControl>
+    <div className={styles.areaTypeInnerContainer}>
+      <FormControl component="fieldset">
+        <RadioGroup
+          aria-label="area-type"
+          name="ur_pref"
+          value={value}
+          onChange={handleChange}
+        >
+          <Grid container spacing={5}>
+            <Grid classes={{ root: styles.fullGrid }} item xs={12} md={6}>
+              {areaTypes.slice(0, NUM_ITEMS_PER_GRID).map((areaType) => {
+                return (
+                  <div>
+                    <FormControlLabel
+                      classes={{ label: styles.label }}
+                      value={areaType}
+                      control={
+                        <Radio
+                          classes={{
+                            root: styles.radioButton,
+                          }}
+                        />
+                      }
+                      label={areaType}
+                    />
+                  </div>
+                );
+              })}
+            </Grid>
+            <Grid classes={{ root: styles.fullGrid }} item xs={12} md={6}>
+              {areaTypes
+                .slice(NUM_ITEMS_PER_GRID, areaTypes.length)
+                .map((areaType) => {
+                  return (
+                    <div>
+                      <FormControlLabel
+                        classes={{ label: styles.label }}
+                        value={areaType}
+                        control={
+                          <Radio
+                            classes={{
+                              root: styles.radioButton,
+                            }}
+                          />
+                        }
+                        label={areaType}
+                      />
+                    </div>
+                  );
+                })}
+            </Grid>
+          </Grid>
+        </RadioGroup>
+      </FormControl>
+    </div>
   );
 };
 
