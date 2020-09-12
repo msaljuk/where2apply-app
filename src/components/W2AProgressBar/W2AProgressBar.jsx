@@ -21,7 +21,7 @@ const W2AProgressBar = (props) => {
   } = props;
 
   const completed =
-    amountAccomplished === PROGRESS_COMPLETED && !isLoading & !isAlgorithmError;
+    amountAccomplished === PROGRESS_COMPLETED && !isLoading && !isAlgorithmError;
 
   return (
     <ProgressBar
