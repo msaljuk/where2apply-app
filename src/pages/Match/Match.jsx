@@ -12,7 +12,7 @@ import { prepareData } from "./utils.js";
 import styles from "./Match.module.scss";
 
 const API_ENDPOINT =
-  "http://where2apply-api.herokuapp.com/api/v1/colleges/list";
+  "https://where2apply-api.herokuapp.com/api/v1/colleges/list";
 
 const PREFERENCES_PAGE = "Preferences";
 const PREFERENCES_STAGE = 0;
