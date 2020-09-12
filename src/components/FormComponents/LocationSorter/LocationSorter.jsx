@@ -1,8 +1,9 @@
 import Grid from "@material-ui/core/Grid";
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { ReactSortable, Sortable, MultiDrag, Swap } from "react-sortablejs";
 import USAMap from "react-usa-map";
+import { FormDispatch, FormState } from "../../../pages/Match/Match";
 
 import { getRegionStyle, statesCustomConfig } from "./utils";
 
@@ -11,19 +12,64 @@ import styles from "./LocationSorter.module.scss";
 Sortable.mount(new MultiDrag(), new Swap());
 
 const LocationSorter = () => {
-  const [neutralStates, setNeutralStates] = useState([
-    { id: 1, name: "New England" },
-    { id: 2, name: "Mid East" },
-    { id: 3, name: "Great Lakes" },
-    { id: 4, name: "Plains" },
-    { id: 5, name: "Southeast" },
-    { id: 6, name: "Southwest" },
-    { id: 7, name: "Rocky Mountains" },
-    { id: 8, name: "Far West" },
-    { id: 9, name: "Outlying Areas" },
-  ]);
+  const state = useContext(FormState);
+  const dispatch = useContext(FormDispatch);
+
+  const [neutralStates, setNeutralStates] = useState([]);
   const [preferredStates, setPreferredStates] = useState([]);
   const [nonPreferredStates, setNonPreferredStates] = useState([]);
+
+  useEffect(() => {
+    const newNeutralStates = [];
+    const newPreferredStates = [];
+    const newNonPreferredStates = [];
+
+    const regions = Object.keys(state.region_dic);
+
+    regions.map((region) => {
+      if (state.region_dic[region] === "Neutral") {
+        newNeutralStates.push({ id: region, name: region });
+      } else if (state.region_dic[region] === "Preferred") {
+        newPreferredStates.push({ id: region, name: region });
+      } else if (state.region_dic[region] === "Not_Preferred") {
+        newNonPreferredStates.push({ id: region, name: region });
+      }
+
+      return null;
+    });
+
+    setNeutralStates(newNeutralStates);
+    setPreferredStates(newPreferredStates);
+    setNonPreferredStates(newNonPreferredStates);
+  }, [state.region_dic]);
+
+  const updateFinalRegionList = (regions, preferenceType) => {
+    const currentRegionList = state.region_dic;
+    const updatedRegions = {};
+
+    regions.map((region) => {
+      updatedRegions[region.name] = preferenceType;
+      return null;
+    });
+    const newRegionList = { ...currentRegionList, ...updatedRegions };
+
+    dispatch({ type: "region_dic", payload: newRegionList });
+  };
+
+  const handlePreferredChange = (preferredRegions) => {
+    setPreferredStates(preferredRegions);
+    updateFinalRegionList(preferredRegions, "Preferred");
+  };
+
+  const handleNeutralChange = (neutralRegions) => {
+    setNeutralStates(neutralRegions);
+    updateFinalRegionList(neutralRegions, "Neutral");
+  };
+
+  const handleNonPreferredChange = (nonPreferredStates) => {
+    setNonPreferredStates(nonPreferredStates);
+    updateFinalRegionList(nonPreferredStates, "Not_Preferred");
+  };
 
   return (
     <div className={styles.locationSorterContainer}>
@@ -45,7 +91,7 @@ const LocationSorter = () => {
               delayOnTouchStart={true}
               group="us_regions"
               list={preferredStates}
-              setList={setPreferredStates}
+              setList={handlePreferredChange}
             >
               {preferredStates.map((item) => (
                 <div className={getRegionStyle(item.name)} key={item.id}>
@@ -63,7 +109,7 @@ const LocationSorter = () => {
               delayOnTouchStart={true}
               group="us_regions"
               list={neutralStates}
-              setList={setNeutralStates}
+              setList={handleNeutralChange}
             >
               {neutralStates.map((item) => (
                 <div className={getRegionStyle(item.name)} key={item.id}>
@@ -82,7 +128,7 @@ const LocationSorter = () => {
               delayOnTouchStart={true}
               group="us_regions"
               list={nonPreferredStates}
-              setList={setNonPreferredStates}
+              setList={handleNonPreferredChange}
             >
               {nonPreferredStates.map((item) => (
                 <div className={getRegionStyle(item.name)} key={item.id}>

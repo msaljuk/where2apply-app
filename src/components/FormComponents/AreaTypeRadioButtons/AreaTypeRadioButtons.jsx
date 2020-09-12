@@ -5,7 +5,9 @@ import {
   Radio,
   RadioGroup,
 } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useContext } from "react";
+
+import { FormDispatch, FormState } from "../../../pages/Match/Match";
 
 import styles from "./AreaTypeRadioButtons.module.scss";
 
@@ -26,26 +28,15 @@ const areaTypes = [
   "Town: Remote",
 ];
 
-// const areaTypesToBackendNumber = {
-//   "City: Large": 11,
-//   "City: Midsize": 10,
-//   "City: Small": 9,
-//   "Rural: Distant": 1,
-//   "Rural: Fringe": 2,
-//   "Rural: Remote": 0,
-//   "Suburb: Large": 8,
-//   "Suburb: Midsize": 7,
-//   "Suburb: Small": 6,
-//   "Town: Distant": 4,
-//   "Town: Fringe": 5,
-//   "Town: Remote": 3,
-// };
-
 const AreaTypeRadioButtons = () => {
-  const [value, setValue] = useState("City: Large");
+  const state = useContext(FormState);
+  const dispatch = useContext(FormDispatch);
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const onCheck = (event) => {
+    dispatch({
+      type: "ur_pref",
+      payload: event.target.value,
+    });
   };
 
   return (
@@ -54,8 +45,8 @@ const AreaTypeRadioButtons = () => {
         <RadioGroup
           aria-label="area-type"
           name="ur_pref"
-          value={value}
-          onChange={handleChange}
+          value={state.ur_pref}
+          onChange={onCheck}
         >
           <Grid container spacing={5}>
             <Grid classes={{ root: styles.fullGrid }} item xs={12} md={6}>

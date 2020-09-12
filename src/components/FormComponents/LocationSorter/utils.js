@@ -81,11 +81,11 @@ export const statesCustomConfig = () => {
   return (() => {
     const finalConfig = {};
 
-    // eslint-disable-next-line
     statesToRegions.map((item) => {
       const state = Object.keys(item)[0];
-
       finalConfig[state] = { fill: regionFills[item[state]] };
+
+      return null;
     });
 
     return finalConfig;
@@ -95,7 +95,6 @@ export const statesCustomConfig = () => {
 export const getRegionStyle = (regionName) => {
   switch (regionName) {
     case "New England":
-      console.log("hit");
       return styles.newEngland;
     case "Mid East":
       return styles.midEast;

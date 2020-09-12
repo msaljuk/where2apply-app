@@ -21,3 +21,12 @@
 .button:hover {
   background-color: $code-green;
 }
+
+.disabled {
+  cursor: default;
+  opacity: 0.5;
+
+  &:hover {
+    background-color: $jade-blue;
+  }
+}

@@ -26,3 +26,19 @@
   border: 1px solid $white;
   width: 400px;
 }
+
+.loader,
+.algorithmError {
+  @extend .collegeList;
+  margin: 20% 0;
+}
+
+.loaderLabel {
+  margin-top: 1%;
+}
+
+.algorithmErrorText {
+  font-family: "Avenir-Heavy";
+  font-size: 18px;
+  text-align: center;
+}

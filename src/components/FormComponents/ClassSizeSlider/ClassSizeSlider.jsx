@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Slider } from "@material-ui/core";
+
+import { FormDispatch, FormState } from "../../../pages/Match/Match";
 
 import styles from "./ClassSizeSlider.module.scss";
 
@@ -27,16 +29,24 @@ const classSizeMarks = [
 ];
 
 const ClassSizeSlider = () => {
+  const state = useContext(FormState);
+  const dispatch = useContext(FormDispatch);
+
+  const onSliderChange = (event, newValue) => {
+    dispatch({ type: "class_size", payload: newValue });
+  };
+
   return (
     <Slider
       classes={{
         root: styles.sliderColor,
         markLabel: styles.sliderLabel,
       }}
-      defaultValue={500}
       getAriaValueText={(value) => value}
       aria-labelledby="class-size-slider"
+      onChange={onSliderChange}
       step={50}
+      value={parseInt(state.class_size)}
       valueLabelDisplay="auto"
       min={50}
       max={2000}
