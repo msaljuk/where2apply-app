@@ -68,7 +68,6 @@ const Match = () => {
     setIsLoading(true);
 
     const requestBody = prepareData(formState);
-    console.log(requestBody);
 
     axios
       .post(API_ENDPOINT, requestBody)
@@ -127,6 +126,7 @@ const Match = () => {
       <div className={styles.progressContainer}>
         <W2AProgressBar
           amountAccomplished={progress}
+          isAlgorithmError={isAlgorithmError}
           isLoading={isLoading}
           onPreferencesClick={moveToPreferencesPage}
           onProfileClick={moveToProfilePage}

@@ -14,12 +14,14 @@ const PROGRESS_COMPLETED = 100;
 const W2AProgressBar = (props) => {
   const {
     amountAccomplished,
+    isAlgorithmError,
     isLoading,
     onPreferencesClick,
     onProfileClick,
   } = props;
 
-  const completed = amountAccomplished === PROGRESS_COMPLETED && !isLoading;
+  const completed =
+    amountAccomplished === PROGRESS_COMPLETED && !isLoading & !isAlgorithmError;
 
   return (
     <ProgressBar
