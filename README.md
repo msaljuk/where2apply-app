@@ -1,6 +1,6 @@
 # where2apply-app
 
-Frontend React App for where2app
+Frontend React App for where2apply
 
 ## Deployment
 
