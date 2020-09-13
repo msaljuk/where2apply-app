@@ -4,7 +4,7 @@ Frontend React App for where2apply
 
 ## Deployment
 
-To view the latest deployed version of this app, go to [https://where2apply.netlify.app/](https://where2apply.netlify.app/).
+To view the latest deployed version of this app, go to [https://where2apply.netlify.app/](https://where2apply.netlify.app/)
 
 ## Useful Scripts
 
