@@ -6,7 +6,6 @@
 }
 
 .imageContainer {
-  background-color: $eggshell;
   min-height: 400px;
   margin-bottom: 7%;
 }
@@ -25,4 +24,11 @@
   font-family: "Avenir-Light";
   font-size: 18px;
   margin-top: 3%;
+}
+
+.image {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border: 10px solid $eggshell;
 }

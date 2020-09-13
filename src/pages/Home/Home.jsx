@@ -10,10 +10,13 @@ import GridPuddleModule from "../../components/GridItems/GridPuddleModule/GridPu
 
 import algorithm from "../../images/algorithm.png";
 import cappex from "../../images/cappex.png";
+import choudry from "../../images/choudry.jpg";
 import collegeBoard from "../../images/collegeBoard.png";
+import hesham from "../../images/hesham.jpg";
 import ipeds from "../../images/ipeds.png";
 import preferences from "../../images/preferences.png";
 import profile from "../../images/profile.png";
+import saljuk from "../../images/saljuk.jpg";
 
 import styles from "./Home.module.scss";
 
@@ -138,18 +141,21 @@ const Home = () => {
         <div className={styles.gridContainer}>
           <GridLayoutModule {...aboutSection}>
             <GridCardModule
+              imageSrc={choudry}
               headerText={"Choudry Abdul Rehman"}
-              role={"Model Scripter"}
+              role={"Data Scientist"}
               subtitleText={"Knox 2023"}
             />
             <GridCardModule
+              imageSrc={hesham}
               headerText={"Hesham Nawaz"}
-              role={"Model Scripter"}
+              role={"Data Scientist"}
               subtitleText={"MIT 2022"}
             />
             <GridCardModule
+              imageSrc={saljuk}
               headerText={"Saljuk Gondal"}
-              role={"Model Scripter | Designer | Developer"}
+              role={"Data Scientist | Designer | Developer"}
               subtitleText={"Stanford 2022"}
             />
           </GridLayoutModule>
