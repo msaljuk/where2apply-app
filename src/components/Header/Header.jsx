@@ -47,11 +47,14 @@ const Header = () => {
             </li>
           </div>
 
-          <li className={styles.tryElement} hidden>
-            <Link className={classnames(styles.navbarLink, styles.try)}>
+          {/* <li className={styles.tryElement} hidden>
+            <Link
+              className={classnames(styles.navbarLink, styles.try)}
+      
+            >
               Try
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </nav>
